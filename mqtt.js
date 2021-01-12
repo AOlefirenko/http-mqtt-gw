@@ -9,6 +9,10 @@ client.on('connect', function () {
     console.log('MQTT connected')
 })
 
+client.on('error', function (err) {
+    console.log('MQTT error', err)
+})
+
 module.exports.publish = function(topic, payload, opt){
 
     return new Promise((resolve, reject)=>{
